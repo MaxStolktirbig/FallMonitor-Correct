@@ -1,3 +1,3 @@
 package com.example.fallmonitor.monitor.domain;
 
-public record PatientId (int patientId) {}
+public record PatientId (Integer patientId) {}

@@ -1,4 +1,4 @@
 package com.example.fallmonitor.monitor.domain;
 
-public record RecordedDataInstanceId (int recordedDataInstanceId) {
+public record RecordedDataInstanceId (Integer recordedDataInstanceId) {
 }

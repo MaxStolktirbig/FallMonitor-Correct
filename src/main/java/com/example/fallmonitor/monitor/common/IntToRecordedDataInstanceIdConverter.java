@@ -4,7 +4,6 @@ import com.example.fallmonitor.monitor.domain.RecordedDataInstanceId;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
 
-
 @ReadingConverter
 public class IntToRecordedDataInstanceIdConverter implements Converter<Integer, RecordedDataInstanceId> {
     @Override
