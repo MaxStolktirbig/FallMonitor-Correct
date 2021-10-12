@@ -15,10 +15,9 @@ public class RestExceptionResolver extends ResponseEntityExceptionHandler{
     protected ResponseEntity<ResolvedExceptionBody> handleConflict(
             PatientNotFoundException ex
     ){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HttpStatus status = HttpStatus.NOT_FOUND;
         ResolvedExceptionBody resolvedExceptionBody = new ResolvedExceptionBody(
-                simpleDateFormat.format(new Date()), ex.getMessage(), status
+                ex.getMessage(), status
         );
             return new ResponseEntity<>(resolvedExceptionBody, HttpStatus.CONFLICT);
     }
@@ -26,10 +25,9 @@ public class RestExceptionResolver extends ResponseEntityExceptionHandler{
     protected ResponseEntity<ResolvedExceptionBody> handleConflict(
             CaretakerNotFoundException ex
     ){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HttpStatus status = HttpStatus.NOT_FOUND;
         ResolvedExceptionBody resolvedExceptionBody = new ResolvedExceptionBody(
-                simpleDateFormat.format(new Date()), ex.getMessage(), status
+                 ex.getMessage(), status
         );
         return new ResponseEntity<>(resolvedExceptionBody, HttpStatus.CONFLICT);
     }
@@ -37,10 +35,10 @@ public class RestExceptionResolver extends ResponseEntityExceptionHandler{
     protected ResponseEntity<ResolvedExceptionBody> handleConflict(
             NoContactInfoException ex
     ){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
         HttpStatus status = HttpStatus.NOT_FOUND;
         ResolvedExceptionBody resolvedExceptionBody = new ResolvedExceptionBody(
-                simpleDateFormat.format(new Date()), ex.getMessage(), status
+                ex.getMessage(), status
         );
         return new ResponseEntity<>(resolvedExceptionBody, HttpStatus.CONFLICT);
     }
@@ -49,10 +47,9 @@ public class RestExceptionResolver extends ResponseEntityExceptionHandler{
     protected ResponseEntity<ResolvedExceptionBody> handleConflict(
             NotificationFailedException ex
     ){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         ResolvedExceptionBody resolvedExceptionBody = new ResolvedExceptionBody(
-                simpleDateFormat.format(new Date()), ex.getMessage(), status
+                ex.getMessage(), status
         );
         return new ResponseEntity<>(resolvedExceptionBody, HttpStatus.CONFLICT);
     }
@@ -61,10 +58,9 @@ public class RestExceptionResolver extends ResponseEntityExceptionHandler{
     protected ResponseEntity<ResolvedExceptionBody> handleConflict(
             NotValidException ex
     ){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         HttpStatus status = HttpStatus.BAD_REQUEST;
         ResolvedExceptionBody resolvedExceptionBody = new ResolvedExceptionBody(
-                simpleDateFormat.format(new Date()), ex.getMessage(), status
+                ex.getMessage(), status
         );
         return new ResponseEntity<>(resolvedExceptionBody, HttpStatus.CONFLICT);
     }
