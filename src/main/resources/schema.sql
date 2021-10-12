@@ -25,5 +25,7 @@ create table caretaker
     name         varchar(70) not null,
     address      varchar(50) not null,
     phone_number integer,
-    email        varchar(128)
+    email        varchar(128),
+    patient_id   integer,
+    foreign key (patient_id) references patient (patient_id)
 );

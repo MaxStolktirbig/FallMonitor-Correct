@@ -1,2 +1,2 @@
-insert into caretaker(name, address, phone_number, email) values ('henk', 'henkstraat 1', 634582156, 'henk@henk.henk');
 insert into patient(name, room_number, phone_number, age, length, severity) values ('herman', 5, 63458346, 75, 1.73, 'LOW');
+insert into caretaker(name, address, phone_number, email, patient_id) values ('henk', 'henkstraat 1', 634582156, 'henk@henk.henk', 0);
