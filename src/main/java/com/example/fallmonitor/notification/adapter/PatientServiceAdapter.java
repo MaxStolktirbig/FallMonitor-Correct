@@ -1,7 +1,5 @@
 package com.example.fallmonitor.notification.adapter;
 
-import com.example.fallmonitor.common.StringToEnumFactory;
-import com.example.fallmonitor.common.exception.PatientNotFoundException;
 import com.example.fallmonitor.monitor.adapter.PatientController;
 import com.example.fallmonitor.notification.domain.ContactInfo;
 import com.example.fallmonitor.notification.domain.NotificationSeverity;

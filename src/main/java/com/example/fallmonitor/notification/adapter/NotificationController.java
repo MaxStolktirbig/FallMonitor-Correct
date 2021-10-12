@@ -1,9 +1,5 @@
 package com.example.fallmonitor.notification.adapter;
 
-import com.example.fallmonitor.common.exception.CaretakerNotFoundException;
-import com.example.fallmonitor.common.exception.NoContactInfoException;
-import com.example.fallmonitor.common.exception.NotificationFailedException;
-import com.example.fallmonitor.common.exception.PatientNotFoundException;
 import com.example.fallmonitor.notification.application.NotificationService;
 import com.example.fallmonitor.notification.domain.Notification;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,3 +1,11 @@
 package com.example.fallmonitor.notification.domain;
 
-public record PatientId (Integer patientId){}
+
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public record PatientId (Integer patientId){
+    @JsonValue
+    public Integer getPatientId(){
+        return patientId;
+    }
+}

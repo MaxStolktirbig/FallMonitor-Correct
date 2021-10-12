@@ -2,7 +2,6 @@ package com.example.fallmonitor.monitor.application;
 
 import com.example.fallmonitor.common.exception.NotValidException;
 import com.example.fallmonitor.common.exception.PatientNotFoundException;
-import com.example.fallmonitor.monitor.domain.Patient;
 import com.example.fallmonitor.monitor.domain.PatientId;
 import com.example.fallmonitor.monitor.domain.RecordedDataInstance;
 import com.example.fallmonitor.monitor.domain.RecordedPatientData;

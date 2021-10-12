@@ -1,8 +1,6 @@
 package com.example.fallmonitor.monitor.adapter;
 
-import com.example.fallmonitor.common.exception.PatientNotFoundException;
 import com.example.fallmonitor.monitor.application.PatientService;
-import com.example.fallmonitor.monitor.domain.PatientSeverity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -3,8 +3,6 @@ package com.example.fallmonitor.common.exception;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-import java.net.http.HttpResponse;
-import java.time.LocalDate;
 @Getter
 public class ResolvedExceptionBody {
     private final String timestamp;
