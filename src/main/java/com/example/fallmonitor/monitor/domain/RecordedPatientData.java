@@ -10,14 +10,13 @@ public class RecordedPatientData {
 
     @Id
     private PatientId patientId;
-    private List<RecordedDataInstanceId> recordedDataInstancesIds;
+    private List<RecordedDataInstance> recordedDataInstances;
 
-    public RecordedPatientData(PatientId patientId, List<RecordedDataInstanceId> recordedDataInstancesIds) {
+    public RecordedPatientData(PatientId patientId, List<RecordedDataInstance> recordedDataInstances) {
         this.patientId = patientId;
-        this.recordedDataInstancesIds = recordedDataInstancesIds;
+        this.recordedDataInstances = recordedDataInstances;
     }
-
-    public void register(RecordedDataInstance recordedDataInstance){
-        recordedDataInstancesIds.add(recordedDataInstance.getRecordedDataInstanceId());
+    public static RecordedPatientData create(PatientId patientId, List<RecordedDataInstance> recordedDataInstances){
+        return new RecordedPatientData(patientId, recordedDataInstances);
     }
 }

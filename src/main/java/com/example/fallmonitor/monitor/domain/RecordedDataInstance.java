@@ -5,7 +5,6 @@ import com.example.fallmonitor.common.exception.NotValidException;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Embedded;
-import org.springframework.data.relational.core.sql.Not;
 
 @Data
 public class RecordedDataInstance {
@@ -40,15 +39,6 @@ public class RecordedDataInstance {
     }
 
     public static boolean validateData(float walkingSpeed){
-        return walkingSpeed < 10;
-    }
-
-    @Override
-    public String toString() {
-        return "RecordedDataInstance{" +
-                "recordedDataInstanceId=" + recordedDataInstanceId.recordedDataInstanceId() +
-                ", patientId=" + patientId.patientId() +
-                ", walkingSpeed=" + walkingSpeed +
-                '}';
+        return walkingSpeed < 10 && walkingSpeed > 0;
     }
 }

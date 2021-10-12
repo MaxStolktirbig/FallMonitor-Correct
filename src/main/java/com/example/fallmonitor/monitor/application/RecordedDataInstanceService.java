@@ -11,6 +11,8 @@ import com.example.fallmonitor.monitor.repository.RecordedDataInstanceRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RecordedDataInstanceService {
     @Autowired
@@ -27,7 +29,9 @@ public class RecordedDataInstanceService {
 
     }
 
-    public RecordedPatientData findRecordedDataByPatientId(Integer patientId){
-        return new RecordedPatientData(new PatientId(patientId), recordedDataInstanceRepsitory.findIdsByPatientId(patientId));
+    public RecordedPatientData findRecordedDataByPatientId(Integer patientId) throws PatientNotFoundException{
+        patientRepository.findById(patientId).orElseThrow(PatientNotFoundException::new);
+        List<RecordedDataInstance> recordedDataInstances = recordedDataInstanceRepsitory.findAllByPatientId(patientId);
+        return RecordedPatientData.create(new PatientId(patientId), recordedDataInstances);
     }
 }
