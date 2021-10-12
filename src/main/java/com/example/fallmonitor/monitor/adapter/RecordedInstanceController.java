@@ -15,7 +15,7 @@ public class RecordedInstanceController {
     @Autowired
     RecordedDataInstanceService recordedDataInstanceService;
     @PostMapping("/recordData")
-    public RecordedDataInstance recordData(@RequestParam("walkingSpeed") int walkingSpeed, @RequestParam("patientId") int patientId) throws NotValidException, PatientNotFoundException {
+    public RecordedDataInstance recordData(@RequestParam("walkingSpeed") int walkingSpeed, @RequestParam("patientId") Integer patientId) throws NotValidException, PatientNotFoundException {
         return recordedDataInstanceService.recordData(walkingSpeed, patientId);
     }
     @GetMapping("/patientData")
