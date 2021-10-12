@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PatientService {
+public class PatientServiceAdapter {
     @Autowired
     PatientController patientController;
 
     public NotificationSeverity getPatientSeverityById(int patientId) throws PatientNotFoundException {
         return NotificationSeverity.valueOf(NotificationSeverity.class, patientController.getPatientSeverity(patientId));
     }
-    public ContactInfo getContactInfo(int patientId){
-        return new ContactInfo(patientController.getPatientEmail(patientId), patientController.getPatientPhoneNumber(patientId));
+    public ContactInfo getContactInfo(int patientId) throws PatientNotFoundException{
+        return new ContactInfo(null, patientController.getPatientPhoneNumber(patientId));
     }
 }

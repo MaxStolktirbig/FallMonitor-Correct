@@ -15,10 +15,7 @@ public class PatientController {
     public String getPatientSeverity(@RequestParam("patientId") int patientId) throws PatientNotFoundException {
         return patientService.getPatientSeverityByPatientId(patientId).name();
     }
-    public String getPatientEmail(int patientId){
-        return patientService.getEmailByPatientId(patientId);
-    }
-    public int getPatientPhoneNumber(int patientId) {
+    public int getPatientPhoneNumber(int patientId) throws PatientNotFoundException{
         return patientService.getPhoneNumberByPatientId(patientId);
     }
 }

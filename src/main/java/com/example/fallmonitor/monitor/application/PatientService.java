@@ -16,11 +16,7 @@ public class PatientService {
       Patient patient = patientRepository.findById(patientId).orElseThrow(PatientNotFoundException::new);
       return patient.getSeverity();
     }
-    public String getEmailByPatientId(int patientId){
-        return patientRepository.findEmailByPatientId(patientId);
-    }
-
-    public int getPhoneNumberByPatientId(int patientId) {
-        return patientRepository.findPhoneNumberByPatientId(patientId);
+    public int getPhoneNumberByPatientId(int patientId) throws PatientNotFoundException {
+        return patientRepository.findPhoneNumberByPatientId(patientId).orElseThrow(PatientNotFoundException::new);
     }
 }

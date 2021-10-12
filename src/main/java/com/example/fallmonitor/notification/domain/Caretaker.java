@@ -12,7 +12,8 @@ public class Caretaker {
     String name;
     String address;
     String email;
-    int patientId;
+    @Embedded.Nullable
+    PatientId patientId;
     int phoneNumber;
 
     public static Caretaker create(String name, String address, String email, int phoneNumber){

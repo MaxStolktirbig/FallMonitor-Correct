@@ -14,9 +14,7 @@ public interface PatientRepository extends CrudRepository<Patient, Integer > {
     @Override
     @Query("SELECT * FROM PATIENT WHERE PATIENT_ID=:patientId")
     Optional<Patient> findById(Integer patientId);
-    @Query("SELECT EMAIL FROM PATIENT WHERE PATIENT_ID=:patienId")
-    String findEmailByPatientId(@Param("patientId") Integer patientId);
-    @Query("SELECT PHONE_NUMBER FROM PATIENT WHERE PATIENT_ID=:patienId")
-    int findPhoneNumberByPatientId(@Param("patientId") Integer patientId);
+    @Query("SELECT PHONE_NUMBER FROM PATIENT WHERE PATIENT_ID=:patientId")
+    Optional<Integer> findPhoneNumberByPatientId(@Param("patientId") Integer patientId);
 
 }
