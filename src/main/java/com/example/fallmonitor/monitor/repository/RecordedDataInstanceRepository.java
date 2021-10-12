@@ -13,6 +13,7 @@ import java.util.Optional;
 @Repository
 public interface RecordedDataInstanceRepository extends CrudRepository<RecordedDataInstance, Integer> {
 
+
     @Query("SELECT * FROM recorded_data_instance WHERE patient_id = :patientId")
     List<RecordedDataInstance> findAllByPatientId(@Param("patientId") Integer patientId);
 

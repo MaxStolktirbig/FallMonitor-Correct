@@ -1,9 +1,11 @@
 package com.example.fallmonitor.monitor.domain;
 
 
+import com.example.fallmonitor.common.exception.NotValidException;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Embedded;
+import org.springframework.data.relational.core.sql.Not;
 
 @Data
 public class RecordedDataInstance {
@@ -28,16 +30,25 @@ public class RecordedDataInstance {
             return null;
         }
     }
-    public static RecordedDataInstance create(int patientId, float walkingSpeed){
+    public static RecordedDataInstance create(int patientId, float walkingSpeed) throws NotValidException {
         RecordedDataInstance recordedDataInstance = new RecordedDataInstance(null, new PatientId(patientId), walkingSpeed);
         if(validateData(walkingSpeed)){
             return recordedDataInstance;
         } else {
-            return null;
+            throw new NotValidException(recordedDataInstance.getClass().getName());
         }
     }
 
     public static boolean validateData(float walkingSpeed){
         return walkingSpeed < 10;
+    }
+
+    @Override
+    public String toString() {
+        return "RecordedDataInstance{" +
+                "recordedDataInstanceId=" + recordedDataInstanceId.recordedDataInstanceId() +
+                ", patientId=" + patientId.patientId() +
+                ", walkingSpeed=" + walkingSpeed +
+                '}';
     }
 }
