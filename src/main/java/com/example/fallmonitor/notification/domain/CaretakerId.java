@@ -1,3 +1,11 @@
 package com.example.fallmonitor.notification.domain;
 
-public record CaretakerId (Integer caretakerId) {}
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public record CaretakerId (Integer caretakerId) {
+
+    @JsonValue
+    public Integer getCaretakerId() {
+        return caretakerId;
+    }
+}

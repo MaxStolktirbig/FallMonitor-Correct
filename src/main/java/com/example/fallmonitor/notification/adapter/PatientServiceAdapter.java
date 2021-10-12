@@ -13,10 +13,10 @@ public class PatientServiceAdapter {
     @Autowired
     PatientController patientController;
 
-    public NotificationSeverity getPatientSeverityById(int patientId) throws PatientNotFoundException {
+    public NotificationSeverity getPatientSeverityById(int patientId) {
         return NotificationSeverity.valueOf(NotificationSeverity.class, patientController.getPatientSeverity(patientId));
     }
-    public ContactInfo getContactInfo(int patientId) throws PatientNotFoundException{
+    public ContactInfo getContactInfo(int patientId) {
         return new ContactInfo(null, patientController.getPatientPhoneNumber(patientId));
     }
 }

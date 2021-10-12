@@ -18,8 +18,7 @@ public class NotificationController {
     @Autowired
     NotificationService notificationService;
     @PostMapping("/notify")
-    public Notification notify(@RequestParam("patientId") Integer patientId) throws PatientNotFoundException, CaretakerNotFoundException,
-                                                                                        NoContactInfoException, NotificationFailedException {
+    public Notification notify(@RequestParam("patientId") Integer patientId) {
         return notificationService.notify(patientId);
     }
 }

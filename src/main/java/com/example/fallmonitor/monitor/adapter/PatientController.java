@@ -12,10 +12,10 @@ public class PatientController {
     @Autowired
     PatientService patientService;
     @GetMapping("patientseverity")
-    public String getPatientSeverity(@RequestParam("patientId") int patientId) throws PatientNotFoundException {
+    public String getPatientSeverity(@RequestParam("patientId") int patientId)  {
         return patientService.getPatientSeverityByPatientId(patientId).name();
     }
-    public int getPatientPhoneNumber(int patientId) throws PatientNotFoundException{
+    public int getPatientPhoneNumber(int patientId) {
         return patientService.getPhoneNumberByPatientId(patientId);
     }
 }

@@ -14,11 +14,11 @@ public class RecordedInstanceController {
     @Autowired
     RecordedDataInstanceService recordedDataInstanceService;
     @PostMapping("/recordData")
-    public RecordedDataInstance recordData(@RequestParam("walkingSpeed") int walkingSpeed, @RequestParam("patientId") Integer patientId) throws NotValidException, PatientNotFoundException {
+    public RecordedDataInstance recordData(@RequestParam("walkingSpeed") int walkingSpeed, @RequestParam("patientId") Integer patientId) {
         return recordedDataInstanceService.recordData(walkingSpeed, patientId);
     }
     @GetMapping("/patientData")
-    public RecordedPatientData findByPatientId(@RequestParam("patientId") Integer patientId) throws PatientNotFoundException{
+    public RecordedPatientData findByPatientId(@RequestParam("patientId") Integer patientId) {
         return recordedDataInstanceService.findRecordedDataByPatientId(patientId);
     }
 }
